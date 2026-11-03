@@ -1,0 +1,50 @@
+#!/bin/sh
+# Stub transmission-daemon for the Transmission 4 app simulation (and, started
+# by hand, for WD's daemon). While it runs it serves empty HTTP on the RPC
+# port from settings.json (default 9091) with busybox httpd, so "is RPC
+# listening?" checks behave as on the NAS. It never touches downloads; on
+# SIGTERM it touches settings.json, as the real daemon rewrites it on stop.
+
+case "${1:-}" in
+    --version | -V)
+        echo "transmission-daemon stub"
+        exit 0
+        ;;
+esac
+
+config=""
+logfile=""
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --config-dir | -g)
+            config=$2
+            shift
+            ;;
+        --logfile | -e)
+            logfile=$2
+            shift
+            ;;
+    esac
+    shift
+done
+
+port=$(sed -n 's/.*"rpc-port": *\([0-9]*\).*/\1/p' "$config/settings.json" 2> /dev/null)
+port=${port:-9091}
+[ -n "$logfile" ] && exec >> "$logfile" 2>&1
+echo "stub transmission-daemon: config $config, port $port, running as $(id -un)"
+
+webroot=$(mktemp -d)
+httpd -f -p "$port" -h "$webroot" &
+httpd_pid=$!
+
+shutdown() {
+    kill "$httpd_pid" 2> /dev/null
+    [ -f "$config/settings.json" ] && touch "$config/settings.json"
+    echo "stub transmission-daemon: settings saved, stopping"
+    exit 0
+}
+trap shutdown TERM INT
+
+while :; do
+    sleep 1
+done

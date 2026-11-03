@@ -1,0 +1,20 @@
+Package:	transmission4
+Section:	Apps
+Version:	4.1.4-7
+Packager:	a1dar
+Email:
+Homepage:	https://transmissionbt.com
+Description:	Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.
+Icon:	transmission4.png
+AddonShowName:	Transmission 4
+AddonIndexPage:	index.html
+AddonUsedPort:	9091
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+CenterType:	1
+UserControl:	1
+MinFWVer:
+MaxFWVer:
+IndividualFlag:

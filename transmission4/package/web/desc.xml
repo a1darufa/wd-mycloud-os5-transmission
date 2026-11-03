@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <en-US>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</en-US>
+  <ru-RU>BitTorrent-демон Transmission 4, работает от имени nobody:share. Один раз переносит настройки приложения Transmission от WD; сначала выключите приложение WD. Логин, порт и разрешённые адреса задаются на странице настроек приложения.</ru-RU>
+</config>

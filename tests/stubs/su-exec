@@ -1,0 +1,16 @@
+#!/bin/sh
+# Stub su-exec for the simulation: checks the user:group argument, records it
+# in /tmp/su-exec.last and runs the command. The simulation runs as root; on
+# the NAS the real su-exec switches to that user and group.
+
+spec=$1
+shift
+case "$spec" in
+    ?*:?*) ;;
+    *)
+        echo "stub su-exec: expected user:group, got '$spec'" >&2
+        exit 1
+        ;;
+esac
+echo "$spec" > /tmp/su-exec.last
+exec "$@"

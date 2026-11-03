@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transmission 4 settings</title>
+<link rel="stylesheet" href="settings.css">
+<script src="settings-common.js" defer></script>
+<script src="settings.js" defer></script>
+</head>
+<body>
+<main id="page" hidden>
+  <div class="title">
+    <h1>Transmission 4</h1>
+    <span id="state" class="badge">Checking...</span>
+  </div>
+  <p id="banner" class="banner" hidden></p>
+
+  <section class="card">
+    <h2>Using Transmission</h2>
+    <p><a id="web-ui" class="button secondary" href="#" target="_blank" rel="noopener">Open Transmission's web interface</a></p>
+    <p>Apps such as Transmission Remote GUI connect to <code id="rpc-url">...</code>
+      with the user name and password below.</p>
+  </section>
+
+  <form id="settings" class="card" novalidate>
+    <h2>Login and access</h2>
+    <p id="initial-password" class="banner info" hidden>Transmission created a random
+      password at its first start. Set your own here; the saved random one is then deleted.</p>
+
+    <label for="username">User name</label>
+    <input id="username" name="username" type="text" autocomplete="username" maxlength="64" required>
+    <span class="error-text" data-error-for="username"></span>
+
+    <label for="password">New password</label>
+    <input id="password" name="password" type="password" autocomplete="new-password" maxlength="128"
+           placeholder="Leave empty to keep the current password">
+    <label for="password2">New password again</label>
+    <input id="password2" name="password2" type="password" autocomplete="new-password" maxlength="128">
+    <span class="hint">At least 8 characters. Only a salted hash is stored, as Transmission itself does.</span>
+    <span class="error-text" data-error-for="password"></span>
+
+    <label for="port">Port</label>
+    <input id="port" name="port" type="text" inputmode="numeric" maxlength="5" required>
+    <span class="hint">For apps and the web interface; 1024 to 65535. The default is 9091.</span>
+    <span class="error-text" data-error-for="port"></span>
+
+    <label for="allowed">Allowed addresses</label>
+    <textarea id="allowed" name="allowed" rows="7" spellcheck="false"></textarea>
+    <span class="hint">One pattern per line, such as <code>192.168.1.*</code>: <code>*</code> and
+      <code>?</code> are wildcards and <code>[0-9]</code> is a range. CIDR such as
+      <code>/24</code> doesn't work here. The defaults allow private home networks and
+      Tailscale. The NAS itself is always allowed, and the login is required from every address.</span>
+    <span class="error-text" data-error-for="allowed"></span>
+
+    <div class="actions">
+      <button id="save" type="submit">Save and restart Transmission</button>
+      <span id="save-status" class="status" role="status"></span>
+    </div>
+    <span class="hint">Saving restarts Transmission, which takes a few seconds; transfers resume on their own.</span>
+  </form>
+
+  <section class="card">
+    <h2>Where things are</h2>
+    <ul>
+      <li>Downloads: the <code>Transmission</code> share (<code>/mnt/HD/HD_a2/Transmission</code>)</li>
+      <li>Settings and torrents: <code>/mnt/HD/HD_a2/.transmission4/config</code> (kept on uninstall)</li>
+      <li>Logs: <code>/mnt/HD/HD_a2/.transmission4/log</code></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
