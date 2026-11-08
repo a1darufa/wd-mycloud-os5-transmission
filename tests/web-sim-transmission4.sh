@@ -21,6 +21,12 @@ await_apply() {
     field status.apply.state
 }
 
+section "Transmission: the settings page"
+raw GET /apps/transmission4/settings.html ""
+web_ui_link() { echo "$body" | grep 'id="web-ui"'; }
+expect "[ '$code' = 200 ] && web_ui_link | grep -q ' hidden>' && ! web_ui_link | grep -q 'href='" \
+    "the web interface button waits, hidden and with no address, for the port (a link to # opens the page again)"
+
 section "Transmission: status"
 api transmission4 '{"action":"status"}'
 expect "[ '$code' = 200 ] && [ \"\$(field ok)\" = true ]" "status answers"

@@ -18,7 +18,9 @@
 
   <section class="card">
     <h2>Using Transmission</h2>
-    <p><a id="web-ui" class="button secondary" href="#" target="_blank" rel="noopener">Open Transmission's web interface</a></p>
+    <!-- Hidden, with no address, until settings.js knows Transmission's port:
+         a link to "#" would open this page again in a new window. -->
+    <p><a id="web-ui" class="button secondary" target="_blank" rel="noopener" hidden>Open Transmission's web interface</a></p>
     <p>Apps such as Transmission Remote GUI connect to <code id="rpc-url">...</code>
       with the user name and password below.</p>
   </section>

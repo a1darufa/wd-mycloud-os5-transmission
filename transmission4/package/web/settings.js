@@ -20,10 +20,12 @@
     let lastStatus = null;
 
     // Transmission serves plain HTTP on its own port, on whatever name or
-    // address this dashboard was opened with.
+    // address this dashboard was opened with. The web interface button stays
+    // hidden until this has run, so it never opens anything else.
     function showAddresses(port) {
         const base = `http://${location.hostname}:${port}/transmission/`;
         page.webUi.href = `${base}web/`;
+        page.webUi.hidden = false;
         page.rpcUrl.textContent = `${base}rpc`;
     }
 

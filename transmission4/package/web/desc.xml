@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- The dashboard shows only the tag of its own language, with no fallback
+     (get_app_desc in /var/www/web/function/app_menu.js), so every one of its
+     18 languages has an entry: English, except Russian. -->
 <config>
   <en-US>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</en-US>
+  <fr-FR>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</fr-FR>
+  <it-IT>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</it-IT>
+  <de-DE>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</de-DE>
+  <es-ES>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</es-ES>
+  <zh-CN>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</zh-CN>
+  <zh-TW>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</zh-TW>
+  <ko-KR>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</ko-KR>
+  <ja-JP>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</ja-JP>
   <ru-RU>BitTorrent-демон Transmission 4, работает от имени nobody:share. Один раз переносит настройки приложения Transmission от WD; сначала выключите приложение WD. Логин, порт и разрешённые адреса задаются на странице настроек приложения.</ru-RU>
+  <pt-BR>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</pt-BR>
+  <cs-CZ>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</cs-CZ>
+  <nl-NL>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</nl-NL>
+  <hu-HU>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</hu-HU>
+  <no-NO>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</no-NO>
+  <pl-PL>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</pl-PL>
+  <sv-SE>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</sv-SE>
+  <tr-TR>Transmission 4 BitTorrent daemon, running as nobody:share. Takes over the settings of WD's Transmission app once; switch WD's app OFF first. Set the login, port and allowed addresses under Configure.</tr-TR>
 </config>
